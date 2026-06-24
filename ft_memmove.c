@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: majaber <majaber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ali <ali@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 14:24:27 by majaber           #+#    #+#             */
-/*   Updated: 2026/06/24 15:27:08 by majaber          ###   ########.fr       */
+/*   Updated: 2026/06/24 23:54:10 by ali              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,4 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 }
     return (dst);
 }
+

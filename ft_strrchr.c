@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majaber <majaber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 14:24:27 by majaber           #+#    #+#             */
-/*   Updated: 2026/06/26 11:51:25 by majaber          ###   ########.fr       */
+/*   Created: 2026/06/26 13:03:06 by majaber           #+#    #+#             */
+/*   Updated: 2026/06/26 13:05:19 by majaber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char *d;
-	const unsigned char *s;
-	size_t i;
+	char	*last;
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	if (d > s)
+	last = NULL;
+	while (*s)
 	{
-		i = len;
-		while (i > 0)
-		{
-			i--;
-			d[i] = s[i];
-		}
+		if (*s == (char)c)
+			last = (char *)s;
+		s++;
 	}
-	else 
-		{
-			i = 0;
-			while (i < len)
-			{
-				d[i] = s[i];
-				i++;
-			}
-		}
-		return (dst);
-	}
+	if (*s == (char)c)
+		last = (char *)s;
+	return (last);
+}

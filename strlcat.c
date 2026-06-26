@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   strlcat.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majaber <majaber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 14:24:27 by majaber           #+#    #+#             */
-/*   Updated: 2026/06/26 11:51:25 by majaber          ###   ########.fr       */
+/*   Created: 2026/06/26 12:12:08 by majaber           #+#    #+#             */
+/*   Updated: 2026/06/26 12:41:43 by majaber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	const unsigned char *s;
-	size_t i;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
@@ -29,14 +30,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			d[i] = s[i];
 		}
 	}
-	else 
+	else
+	{
+		i = 0;
+		while (i < len)
 		{
-			i = 0;
-			while (i < len)
-			{
-				d[i] = s[i];
-				i++;
-			}
+			d[i] = s[i];
+			i++;
 		}
-		return (dst);
 	}
+	return (dst);
+}
